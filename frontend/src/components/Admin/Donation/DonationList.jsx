@@ -51,7 +51,7 @@ const DonationList = () => {
   const getUserdata = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/get-donation-details/${UserId}`
+        `https://api.saibalikavikas.com//api/get-donation-details/${UserId}`
       );
 
       if (res.status === 200) {
@@ -102,7 +102,7 @@ const DonationList = () => {
               <tr>
                 <th scope="col">Sr No</th>
                 <th scope="col">Name</th>
-                
+
                 <th scope="col">Log Id</th>
                 <th scope="col">Amount</th>
                 <th scope="col">Date / Time</th>
@@ -112,10 +112,10 @@ const DonationList = () => {
               {list?.myDonation.length > 0 ? (
                 list?.myDonation.map((user, index) => (
                   <tr key={index}>
-                    <th scope="row">{index+1}</th>
+                    <th scope="row">{index + 1}</th>
                     <td>{user.userId.firstName}</td>
                     <td>{user.userId.logId}</td>
-                    
+
                     <td>{user.amount}</td>
                     <td>{new Date(user.createdAt).toLocaleString()}</td>
                   </tr>
@@ -130,14 +130,14 @@ const DonationList = () => {
         </div>
       )}
 
-   {  list?.myChildsDonation
- && <div className="donation-search">
-        <div className="row">
-          <div className="col-9">
-            <h3 className="mb-2">Team Donation List</h3>
-            <p className="mb-3">List of all Paid and Unpaid retail orders</p>
-          </div>
-          {/* <div className="col-3">
+      {list?.myChildsDonation && (
+        <div className="donation-search">
+          <div className="row">
+            <div className="col-9">
+              <h3 className="mb-2">Team Donation List</h3>
+              <p className="mb-3">List of all Paid and Unpaid retail orders</p>
+            </div>
+            {/* <div className="col-3">
             <input
               type="text"
               placeholder="Search by Name or ID"
@@ -146,42 +146,44 @@ const DonationList = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div> */}
+          </div>
         </div>
-      </div>}
+      )}
 
-    { list?.myChildsDonation
- &&   <div className="table-responsive">
-        <table className="table table-striped text-center">
-          <thead>
-            <tr>
-              <th scope="col">Sr No</th>
-              <th scope="col">Name</th>
-       
-              <th scope="col">Log Id</th>
-              <th scope="col">Amount</th>
-              <th scope="col">Date / Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            {list?.myChildsDonation.length > 0 ? (
-              list?. myChildsDonation?.map((user, index) => (
-                <tr key={index}>
-                  <th scope="row">{index+1}</th>
-                  
-                  <td>{user.userId.firstName}</td>
-                  <td>{user.userId.logId}</td>
-                  <td>{user.amount}</td>
-                  <td>{new Date(user.createdAt).toLocaleString()}</td>
-                </tr>
-              ))
-            ) : (
+      {list?.myChildsDonation && (
+        <div className="table-responsive">
+          <table className="table table-striped text-center">
+            <thead>
               <tr>
-                <td colSpan="7">No users found</td>
+                <th scope="col">Sr No</th>
+                <th scope="col">Name</th>
+
+                <th scope="col">Log Id</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Date / Time</th>
               </tr>
-            )}
-          </tbody>
-        </table>
-      </div>}
+            </thead>
+            <tbody>
+              {list?.myChildsDonation.length > 0 ? (
+                list?.myChildsDonation?.map((user, index) => (
+                  <tr key={index}>
+                    <th scope="row">{index + 1}</th>
+
+                    <td>{user.userId.firstName}</td>
+                    <td>{user.userId.logId}</td>
+                    <td>{user.amount}</td>
+                    <td>{new Date(user.createdAt).toLocaleString()}</td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="7">No users found</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      )}
 
       {/* Pagination Controls */}
       <div className="d-flex justify-content-center align-items-center">
