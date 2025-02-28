@@ -51,7 +51,7 @@ const DonationList = () => {
   const getUserdata = async () => {
     try {
       const res = await axios.get(
-        `https://api.saibalikavikas.com//api/get-donation-details/${UserId}`
+        `https://api.saibalikavikas.com/api/get-donation-details/${UserId}`
       );
 
       if (res.status === 200) {

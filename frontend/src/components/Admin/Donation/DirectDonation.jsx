@@ -95,14 +95,14 @@ const DirectDonation = () => {
     if (!UserId) return; // Avoid API call if UserId is not set
     try {
       const res = await axios.get(
-        `https://api.saibalikavikas.com//api/get-user-details/${UserId}`
+        `https://api.saibalikavikas.com/api/get-user-details/${UserId}`
       );
       if (res.status === 200) {
         setMainUser(res.data.data);
 
         // Fetch left and right users under the main user
         const userRelation = await axios.get(
-          `https://api.saibalikavikas.com//api/user-relation/${UserId}`
+          `https://api.saibalikavikas.com/api/user-relation/${UserId}`
         );
         if (userRelation.status === 200 && userRelation.data) {
           setLeftUser(userRelation.data.userRelation.leftUser);

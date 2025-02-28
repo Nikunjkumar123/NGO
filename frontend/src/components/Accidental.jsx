@@ -42,7 +42,7 @@ const Accidental = () => {
     try {
       // Create an order via API
       const response = await axios.post(
-        "https://api.saibalikavikas.com//api/make-donatation",
+        "https://api.saibalikavikas.com/api/make-donatation",
         {
           amount: parseFloat(amount),
           userId,
@@ -68,7 +68,7 @@ const Accidental = () => {
 
             try {
               const verifyResponse = await axios.post(
-                "https://api.saibalikavikas.com//api/verify-payment",
+                "https://api.saibalikavikas.com/api/verify-payment",
                 {
                   paymentId: order.id,
                   razorpayPaymentId: razorpay_payment_id,

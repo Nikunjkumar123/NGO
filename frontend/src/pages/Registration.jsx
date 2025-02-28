@@ -39,7 +39,7 @@ const Registration = () => {
     e.preventDefault(); // Prevent default form submission
     try {
       const response = await axios.post(
-        "https://api.saibalikavikas.com//api/signup",
+        "https://api.saibalikavikas.com/api/signup",
         formData
       );
       if ((response.status = 201)) {

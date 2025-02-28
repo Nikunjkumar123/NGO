@@ -10,7 +10,7 @@ const UserDetails = () => {
   const getUserData = async () => {
     try {
       const res = await axios.get(
-        "https://api.saibalikavikas.com//api/get-user-details-by-logId/" + id
+        "https://api.saibalikavikas.com/api/get-user-details-by-logId/" + id
       );
       console.log(res);
       if (res.status === 200) {

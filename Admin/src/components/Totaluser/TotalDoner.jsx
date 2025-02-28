@@ -49,7 +49,7 @@ const TotalDoner = () => {
     const fetchNewSignups = async () => {
       try {
         const response = await axios.get(
-          "https://api.saibalikavikas.com//api/get-signups"
+          "https://api.saibalikavikas.com/api/get-signups"
         );
         // console.log(response)
         if (response.status === 200) {

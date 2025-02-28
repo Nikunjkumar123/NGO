@@ -12,7 +12,7 @@ const DirectDonation = () => {
   const getuserRecord = async () => {
     try {
       const res = await axios.get(
-        "https://api.saibalikavikas.com//api/get-user-details/" + UserId
+        "https://api.saibalikavikas.com/api/get-user-details/" + UserId
       );
       if (res.status === 200) {
         setMainUser(res.data.data);

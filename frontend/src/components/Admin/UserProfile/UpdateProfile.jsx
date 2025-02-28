@@ -40,7 +40,7 @@ const UpdateProfile = () => {
   const getUserdata = async () => {
     try {
       const res = await axios.get(
-        `https://api.saibalikavikas.com//api/get-user-details/${userId}`
+        `https://api.saibalikavikas.com/api/get-user-details/${userId}`
       );
       console.log(res);
       if (res.status === 200) {
@@ -64,7 +64,7 @@ const UpdateProfile = () => {
     e.preventDefault();
     try {
       const res = await axios.put(
-        `https://api.saibalikavikas.com//api/update-profile/${userData._id}`,
+        `https://api.saibalikavikas.com/api/update-profile/${userData._id}`,
         userData
       );
       if (res.status === 200) {
@@ -90,7 +90,7 @@ const UpdateProfile = () => {
     e.preventDefault();
     try {
       const res = await axios.put(
-        `https://api.saibalikavikas.com//api/update-profile/${userData._id}`,
+        `https://api.saibalikavikas.com/api/update-profile/${userData._id}`,
         {
           nomineeName: userData.nomineeName,
           nomineeRelation: userData.nomineeRelation,
@@ -127,7 +127,7 @@ const UpdateProfile = () => {
       const isValidPAN = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(userData.panNumber);
       if (isValidPAN) {
         const res = await axios.put(
-          `https://api.saibalikavikas.com//api/update-profile/${userData._id}`,
+          `https://api.saibalikavikas.com/api/update-profile/${userData._id}`,
           {
             panNumber: userData.panNumber,
           }
@@ -166,7 +166,7 @@ const UpdateProfile = () => {
     }
     try {
       const res = await axios.put(
-        `https://api.saibalikavikas.com//api/update-profile/${userData._id}`,
+        `https://api.saibalikavikas.com/api/update-profile/${userData._id}`,
         {
           ifscCode: userData.ifscCode,
           accountNumber: userData.accountNumber,
@@ -206,7 +206,7 @@ const UpdateProfile = () => {
         return;
       }
       const res = await axios.put(
-        `https://api.saibalikavikas.com//api/update-profile/${userData._id}`,
+        `https://api.saibalikavikas.com/api/update-profile/${userData._id}`,
         {
           gstNumber: userData.gstNumber,
         }

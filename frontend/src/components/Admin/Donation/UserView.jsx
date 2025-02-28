@@ -41,7 +41,7 @@ const UserView = () => {
   const getUserdata = async () => {
     try {
       const res = await axios.get(
-        `https://api.saibalikavikas.com//api/get-user-details/${UserId}`
+        `https://api.saibalikavikas.com/api/get-user-details/${UserId}`
       );
 
       if (res.status === 200) {
@@ -218,7 +218,7 @@ const UserView = () => {
   const getdata = async () => {
     try {
       const res = await axios.get(
-        `https://api.saibalikavikas.com//api/get-child-details/${UserId}`
+        `https://api.saibalikavikas.com/api/get-child-details/${UserId}`
       );
 
       if (res.status === 200) {

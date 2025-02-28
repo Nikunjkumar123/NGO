@@ -38,7 +38,7 @@ const Login = () => {
 
     try {
       const res = await axios.post(
-        "https://api.saibalikavikas.com//api/log-in",
+        "https://api.saibalikavikas.com/api/log-in",
         formData
       );
       console.log(res);
